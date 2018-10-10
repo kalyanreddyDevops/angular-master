@@ -1,0 +1,26 @@
+<h2>
+    About - {{startDate | date:"fullDate"| uppercase}}
+</h2>
+
+<span> Power {{2 | power | power:3}} </span>
+<span> Power {{3 | power:4}} </span>
+
+<button (click)="toggle($event)">
+  Show1/Hide
+  </button> {{10+20 | currency:'INR'}}
+
+<button on-click="show = !show"> 
+  Show2/Hide
+  </button>
+
+
+<div *ngIf="show">
+    <h4>
+        Members
+    </h4>
+    <ul (mouseenter)="onEnter()">
+        <li *ngFor=" let name of members ">
+            {{name | uppercase}}
+        </li>
+    </ul>
+</div>
